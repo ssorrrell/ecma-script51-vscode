@@ -1,0 +1,95 @@
+{
+    "name": "ecma5",
+    "displayName": "ECMA 5.1",
+    "description": "ECMA Script v5.1",
+    "version": "0.0.1",
+    "publisher": "ssorrrell",
+    "icon": "assets/logo.png",
+    "galleryBanner": {
+        "color": "#6EE5E5",
+        "theme": "light"
+    },
+    "bugs": {
+        "url": "https://github.com/ssorrrell/ecma-script51-vscode/issues"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/ssorrrell/ecma-script51-vscode.git"
+    },
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.62.0"
+    },
+    "categories": [
+        "Programming Languages",
+        "Linters"
+    ],
+    "activationEvents": [
+        "onCommand:extension.sayHello",
+        "onLanguage:ecmascript"
+    ],
+    "main": "./out/src/extension",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.sayHello",
+                "title": "Hello World"
+            }
+        ],
+        "languages": [
+            {
+                "id": "ecmascript",
+                "aliases": [
+                    "ECMA Script 5"
+                ],
+                "extensions": [
+                    "js",
+                    ".es5"
+                ]
+            }
+        ],
+        "configuration": {
+            "type": "object",
+            "title": "Example configuration",
+            "properties": {
+                "ecmaLanguageServer.maxNumberOfProblems": {
+                    "type": "number",
+                    "default": 100,
+                    "description": "Controls the maximum number of problems produced by the server."
+                },
+                "ecmaLanguageServer.trace.server": {
+                    "scope": "window",
+                    "type": "string",
+                    "enum": [
+                        "off",
+                        "messages",
+                        "verbose"
+                    ],
+                    "default": "off",
+                    "description": "Traces the communication between VSCode and the ecmaLanguageServer service."
+                }
+            }
+        }
+    },
+    "extensionDependencies": [],
+    "scripts": {
+        "compile": "tsc -b",
+        "watch": "tsc -b -w",
+        "test": "mocha --require ts-node/register --timeout 3600000 test/**/*.test.ts"
+    },
+    "devDependencies": {
+        "typescript": "^4.5.2",
+        "@types/vscode": "^1.62.0",
+        "@typescript-eslint/eslint-plugin": "^5.5.0",
+        "@typescript-eslint/parser": "^5.5.0",
+        "eslint": "^7.32.0",
+        "eslint-config-prettier": "^8.3.0",
+        "mocha": "^8.2.1",
+        "@types/node": "^14.14.21",
+        "@types/mocha": "^8.2.0",
+        "vscode-test": "^1.6.1"
+    },
+    "dependencies": {
+        "vscode-languageclient": "^7.0.0"
+    }
+}
