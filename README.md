@@ -5,7 +5,7 @@ This is the VS Code Extension
 
 ## Module Construction
 
-![block-diagram](https://github.com/ssorrrell/ecma-script51-vscode/raw/master/assets/block-diagram.png)
+![block-diagram](https://github.com/ssorrrell/ecma-script51-vscode/blob/main/assets/module-diagram.png)
 
 ## Related Projects
 
